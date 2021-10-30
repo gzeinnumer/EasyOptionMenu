@@ -3,6 +3,7 @@
 ![](https://github.com/gzeinnumer/EasyOptionMenu/blob/gradle/preview/preview_1.PNG)
 ![](https://github.com/gzeinnumer/EasyOptionMenu/blob/gradle/preview/preview_2.PNG)
 
+- Gradle Project
 ```gradle
 buildscript {
     dependencies {
@@ -24,6 +25,8 @@ allprojects {
     }
 }
 ```
+
+- Gradle App
 ```gradle
 android {
     //todo 3
