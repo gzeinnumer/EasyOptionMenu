@@ -38,8 +38,11 @@ public class DummyAdapterV2 extends RecyclerView.Adapter<DummyAdapterV2.MyHolder
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
         //holder.itemView.setAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), GblVariabel.anim));
-        holder.itemView.setOnClickListener(view -> {
-            onItemClickListener.onItemClick(position);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListener.onItemClick(position);
+            }
         });
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) holder.cardView.getLayoutParams();
         int first_last = 16;
