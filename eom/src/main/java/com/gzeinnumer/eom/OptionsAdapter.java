@@ -5,6 +5,7 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -84,6 +85,7 @@ public class OptionsAdapter<T> extends RecyclerView.Adapter<OptionsAdapter.MyHol
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
         holder.bind(list.get(position), onItemClickListener, currentCallBack, levelSize);
+
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) holder.cardView.getLayoutParams();
         int first_last = 6;
         int left_right = 6;

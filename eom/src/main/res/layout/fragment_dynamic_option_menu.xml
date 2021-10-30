@@ -19,14 +19,15 @@
 
         <TextView
             android:id="@+id/tv_title"
+            android:layout_gravity="center"
             style="@style/MyTextHeader"
             android:layout_marginTop="0dp"
+            android:layout_marginBottom="@dimen/space"
             android:text="MyTextHeader" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space"
             android:background="@drawable/background_dynamic_menus"
             android:gravity="center_vertical"
             android:orientation="horizontal">
@@ -69,7 +70,7 @@
             android:paddingTop="2dp"
             android:paddingBottom="2dp"
             android:visibility="gone"
-            tools:itemCount="3"
+            tools:itemCount="1"
             tools:listitem="@layout/item__dynamicoptionsmenu_selected"
             tools:visibility="visible" />
 

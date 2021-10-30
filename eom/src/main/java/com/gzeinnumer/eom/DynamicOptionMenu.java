@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -39,6 +40,8 @@ public class DynamicOptionMenu<T> extends MyLibDialog {
     private RecyclerView rvOptions;
     private LinearLayout llEmpty;
     private AutoCompleteTextView etSearch;
+    private TextView tvTitle;
+    private String title ="";
 
     public interface CallBack<T> {
         List<T> positionItem(T data);
@@ -88,6 +91,12 @@ public class DynamicOptionMenu<T> extends MyLibDialog {
 
     private void initView() {
         initBind();
+        if (title.length()>0){
+            tvTitle.setVisibility(View.VISIBLE);
+            tvTitle.setText(title);
+        } else {
+            tvTitle.setVisibility(View.GONE);
+        }
         initSearchView();
         initSelected();
         initOption();
@@ -101,6 +110,7 @@ public class DynamicOptionMenu<T> extends MyLibDialog {
         rvOptions = view.findViewById(R.id.rv_option);
         etSearch = view.findViewById(R.id.et_Search);
         llEmpty = view.findViewById(R.id.ll_empty);
+        tvTitle = view.findViewById(R.id.tv_title);
     }
 
     private void initSearchView() {
@@ -189,5 +199,9 @@ public class DynamicOptionMenu<T> extends MyLibDialog {
                 }
             }
         });
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

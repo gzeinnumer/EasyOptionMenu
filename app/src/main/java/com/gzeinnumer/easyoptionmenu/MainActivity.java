@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             tv.setText("");
             DynamicOptionMenuBuilder<ExampleModel> dialog = new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
                     .builder(level1)
+                    .setTitle("Pilih Merek")
                     //abaikan ini jika hanya 1 level
                     .addSub(new DynamicOptionMenu.CallBack<ExampleModel>() {
                         @Override

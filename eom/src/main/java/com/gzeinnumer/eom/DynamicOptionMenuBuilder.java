@@ -22,6 +22,11 @@ public class DynamicOptionMenuBuilder<T> {
         return this;
     }
 
+    public DynamicOptionMenuBuilder<T> setTitle(String title) {
+        dialog.setTitle(title);
+        return this;
+    }
+
     public DynamicOptionMenuBuilder<T> addSub(DynamicOptionMenu.CallBack<T>... callBacks){
         dialog.setCallBacks(callBacks);
         return this;
