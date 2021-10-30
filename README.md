@@ -1,8 +1,8 @@
 # EasyOptionMenu
 
-|![](https://github.com/gzeinnumer/EasyOptionMenu/blob/gradle/preview/preview_1.PNG)|![](https://github.com/gzeinnumer/EasyOptionMenu/blob/gradle/preview/preview_2.PNG)|
-|---|---|
- 
+![](https://github.com/gzeinnumer/EasyOptionMenu/blob/gradle/preview/preview_1.PNG)
+![](https://github.com/gzeinnumer/EasyOptionMenu/blob/gradle/preview/preview_2.PNG)
+
 ```gradle
 buildscript {
     dependencies {
