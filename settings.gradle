@@ -1,3 +1,5 @@
 rootProject.name = "EasyOptionMenu"
 include ':app'
 include ':eom'
+
+//todo 4
