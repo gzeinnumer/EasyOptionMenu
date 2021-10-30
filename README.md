@@ -2,7 +2,7 @@
  
 ```gradle
     //maven { url 'https://jitpack.io' }
-    implementation 'com.github.gzeinnumer:EasyOptionMenu:0.0.0-alpha1'
+    implementation 'com.github.gzeinnumer:EasyOptionMenu:0.0.0-alpha8'
     implementation 'com.github.gzeinnumer:EasyDialogFragment:x.x.x'
     implementation 'com.github.gzeinnumer:SimpleMaterialStyle:x.x.x'
 ```
