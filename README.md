@@ -104,9 +104,7 @@ new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
     .show();
 ```
 #
-#### Multi Level Options
-
-- 2 OptionsMenu Level
+#### 2 Level Options
 
 - Declare Dummy List
 
@@ -148,8 +146,8 @@ new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
         }
     }).show();
 ```
-
-- More Than 2 OptionsMenu Level
+#
+#### More Than 2 Level Options
 
 - Declare Dummy List
 
@@ -212,6 +210,11 @@ new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
         }
     }).show();
 ```
+#
+#### Preview
+
+|https://dafunda.com/wp-content/uploads/2019/10/Aplikasi-sering-force-close-min.jpg|
+|---|
 
 ---
 ## Example Code/App
