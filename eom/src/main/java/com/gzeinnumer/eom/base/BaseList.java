@@ -1,8 +1,8 @@
-package com.gzeinnumer.eom;
+package com.gzeinnumer.eom.base;
 
 import java.util.List;
 
-class BaseList<T> {
+public class BaseList<T> {
     private int pos;
     private List<T> data;
 

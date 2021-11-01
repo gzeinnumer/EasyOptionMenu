@@ -1,11 +1,10 @@
-package com.gzeinnumer.eom;
+package com.gzeinnumer.eom.adapter;
 
 import android.content.Context;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -14,6 +13,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.gzeinnumer.eom.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,7 +80,7 @@ public class OptionsAdapter<T> extends RecyclerView.Adapter<OptionsAdapter.MyHol
     @Override
     public MyHolder<T> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         this.context = parent.getContext();
-        return new MyHolder<T>(LayoutInflater.from(parent.getContext()).inflate(R.layout.item__dynamicoptionsmenu, parent, false));
+        return new MyHolder<T>(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_dynamicoptionsmenu, parent, false));
     }
 
     @Override

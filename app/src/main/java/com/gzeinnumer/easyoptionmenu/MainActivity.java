@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.gzeinnumer.eom.DynamicOptionMenu;
+import com.gzeinnumer.eom.dialog.DynamicOptionMenu;
 import com.gzeinnumer.eom.DynamicOptionMenuBuilder;
 
 import java.util.ArrayList;
@@ -48,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.btn).setOnClickListener(v -> {
             tv.setText("");
-            DynamicOptionMenuBuilder<ExampleModel> dialog = new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
+            new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
                     .builder(level1)
                     .setTitle("Pilih Merek")
-                    //abaikan ini jika hanya 1 level
+                    //ignore if your menu only have 1 level
                     .addSub(new DynamicOptionMenu.CallBack<ExampleModel>() {
                         @Override
                         public List<ExampleModel> positionItem(ExampleModel data) {
@@ -71,13 +71,13 @@ public class MainActivity extends AppCompatActivity {
                             return level4;
                         }
                     })
+                    //add this callback. important line
                     .finalCallBack(new DynamicOptionMenu.CallBackFinal<ExampleModel>() {
                         @Override
                         public void positionItem(ExampleModel data) {
                             appent("Level 4_" + data);
                         }
-                    });
-            dialog.show();
+                    }).show();
         });
     }
 
