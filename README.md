@@ -52,8 +52,8 @@ dependencies {
 ```
 ---
 # Feature List
-- [x] [Single Level Menu](#SingleLevelMenu)
-- [x] [Multi Level Menu](#MultiLevelMenu)
+- [x] [Single Level Menu](#single-level-menu)
+- [x] [Multi Level Menu](#multi-level-menu)
 - [x] [Filter](#Filter)
 
 ---
