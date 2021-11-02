@@ -149,7 +149,6 @@ public class DynamicOptionMenu<T> extends MyLibDialog {
         selectedAdapter.setOnItemClickListener(new SelectedAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                Toast.makeText(requireContext(), "" + position + "_" + listSelected.size(), Toast.LENGTH_SHORT).show();
                 listSelected.subList(position, listSelected.size()).clear();
                 currentLevel = position;
                 currentCallBack = position;

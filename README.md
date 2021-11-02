@@ -293,16 +293,14 @@ new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
 
 **Preview** :
 
-|![]()|![]()|![]()|
+|<img src="https://github.com/gzeinnumer/EasyOptionMenu/blob/1.0.0/preview/preview_1.gif" width="300"/>|<img src="https://github.com/gzeinnumer/EasyOptionMenu/blob/1.0.0/preview/preview_2.gif" width="300"/>|<img src="https://github.com/gzeinnumer/EasyOptionMenu/blob/1.0.0/preview/preview_2.gif" width="300"/>|
 |---|---|---|
 
 
 ---
 # Example Code/App
 
-**FullCode [MainActivity](https://github.com/gzeinnumer/SearchViewDialog/blob/master/app/src/main/java/com/gzeinnumer/searchviewdialog/MainActivity.java)**
-
-[Sample Code And App](https://github.com/gzeinnumer/MyLibDialogSearchViewExample)
+**FullCode [MainActivity](https://github.com/gzeinnumer/EasyOptionMenu/blob/1.0.0/app/src/main/java/com/gzeinnumer/easyoptionmenu/MainActivity.java)**
 
 ---
 
