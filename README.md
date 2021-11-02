@@ -1,12 +1,12 @@
-| <img src="https://github.com/gzeinnumer/SearchViewDialog/blob/master/preview/MyLibDialogSearchView_2.jpg" width="300"/> | <img src="https://github.com/gzeinnumer/SearchViewDialog/blob/master/preview/MyLibDialogSearchView_5.jpg" width="300"/> | <img src="https://github.com/gzeinnumer/SearchViewDialog/blob/master/preview/MyLibDialogSearchView_6.jpg" width="300"/> | <img src="https://github.com/gzeinnumer/SearchViewDialog/blob/master/preview/MyLibDialogSearchView_23.jpg" width="300"/> |
-|--|--|--|--|
+| <img src="https://github.com/gzeinnumer/EasyOptionMenu/blob/1.0.0/preview/preview_1.gif" width="300"/> |
+|--|
 
 <h1 align="center">
-  SearchViewDialog - Easy Drop Down
+  EasyOptionMenu - Easy Multi Level Options Menu
 </h1>
 
 <div align="center">
-    <a><img src="https://img.shields.io/badge/Version-3.1.0-brightgreen.svg?style=flat"></a>
+    <a><img src="https://img.shields.io/badge/Version-1.0.0-brightgreen.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/ID-gzeinnumer-blue.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/Java-Suport-green?logo=java&style=flat"></a>
     <a><img src="https://img.shields.io/badge/Kotlin-Suport-green?logo=kotlin&style=flat"></a>
@@ -41,7 +41,7 @@ allprojects {
 dependencies {
   ...
   implementation 'com.google.android.material:material:1.2.1'
-  implementation 'com.github.gzeinnumer:SearchViewDialog:version'
+  implementation 'com.github.gzeinnumer:EasyOptionMenu:version'
 
   implementation 'com.github.gzeinnumer:SimpleMaterialStyle:last-vesion'
   //check on https://github.com/gzeinnumer/SimpleMaterialStyle
@@ -52,9 +52,9 @@ dependencies {
 ```
 ---
 # Feature List
-- [x] [Single Level Menu](#searchviewdialog)
-- [x] [Multi Level Menu](#searchviewdialog)
-- [x] [Filter](#searchviewdialog)
+- [x] [Single Level Menu](#SingleLevelMenu)
+- [x] [Multi Level Menu](#MultiLevelMenu)
+- [x] [Filter](#Filter)
 
 ---
 # Tech stack and 3rd library
@@ -95,29 +95,19 @@ Add This Line to `res/color.xml`. **Important**
 
 #
 ### Type Data
-Dialog with **1 Title, 1 Content, 1 EditText, 1 RecyclerView, 1 Negative Button, 1 Positive Button**. You can choise `Single Item Select` or `Multi Item Select`. The difference is only in `callback` function.
-- **Content Item** there is 3 types data that you can sent to this dialog.
+- **Content Item** there is 2 types data that you can sent to this dialog.
 
 **Type 1**
-```java
-String[] level1 = {"M", "Fadli", "Zein"};
-new DynamicOptionMenuBuilder<String>(getSupportFragmentManager())
-        .builder(level1)
-        .setTitle("Choise Brand")
-        ...
-```
-**Type 2**
 ```java
 ArrayList<String> level1 = new ArrayList<>();
 level1.add("Lorem ipsum dolor");
 new DynamicOptionMenuBuilder<String>(getSupportFragmentManager())
-        .builder(level1)
-        .setTitle("Choise Brand")
-        ...
+    .builder(level1)
+    .setTitle("Choise Brand")
+    ...
 ```
 **Type 3** for this type you should override function `toString()` in your `model pojo`
 ```java
-
 public class ExampleModel {
 
     private int id;
@@ -141,9 +131,9 @@ ArrayList<ExampleModel> level1 = new ArrayList<>();
 level1.add(new ExampleModel(1, "Zein", "Balbar"));
 
 new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
-        .builder(level1)
-        .setTitle("Choise Brand")
-        ...
+    .builder(level1)
+    .setTitle("Choise Brand")
+    ...
 ```
 #
 #### Single Level Menu
@@ -159,7 +149,7 @@ level1.add(new ExampleModel(5, "Title 5", "Address 5"));
 
 new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
     .builder(level1)
-    .setTitle("Pilih Merek")
+    .setTitle("Choise Brand")
     .finalCallBack(new DynamicOptionMenu.CallBackFinal<ExampleModel>() {
         @Override
         public void positionItem(ExampleModel data) {
@@ -184,7 +174,7 @@ Use `addSub(CallBack)` and return you next level menu with same `ModelPojo`. exa
     }
 })
 ```
-full code. Just Copy and Paste it
+Full code. Just Copy and Paste it
 ```java
 List<ExampleModel> level1 = new ArrayList<>();
 List<ExampleModel> level2 = new ArrayList<>();
@@ -203,7 +193,7 @@ level2.add(new ExampleModel(10, "Title 1.5", "Address 10"));
 
 new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
     .builder(level1)
-    .setTitle("Pilih Merek")
+    .setTitle("Choise Brand")
     .addSub(new DynamicOptionMenu.CallBack<ExampleModel>() {
         @Override
         public List<ExampleModel> positionItem(ExampleModel data) {
@@ -219,18 +209,27 @@ new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
     })
     .show();
 ```
+
+#
+
 - More Than 2 Level Menu
 Use `addSub(CallBack[])` and `finalCallBack(...)`.
 
 Use `addSub(CallBack[])` and return you next level menu with same `ModelPojo`, and do it again in next pojo. example
 ```java
 .addSub(
-    new DynamicOptionMenu.CallBack<ExampleModel>() {...},
+    new DynamicOptionMenu.CallBack<ExampleModel>() {
+        @Override
+        public List<ExampleModel> positionItem(ExampleModel data) {
+            appent("Level 1_" + data);
+            return level2; //return level 2 menus
+        }
+    },
     new DynamicOptionMenu.CallBack<ExampleModel>() {...},
     new DynamicOptionMenu.CallBack<ExampleModel>() {...}
 )
 ```
-full code. Just Copy and Paste it
+Full code. Just Copy and Paste it
 ```java
 List<ExampleModel> level1 = new ArrayList<>();
 List<ExampleModel> level2 = new ArrayList<>();
@@ -258,7 +257,7 @@ level4.add(new ExampleModel(15, "Title 1.1.1.2", "Address 15"));
 
 new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
     .builder(level1)
-    .setTitle("Pilih Merek")
+    .setTitle("Choise Brand")
     //ignore if your menu only have 1 level
     .addSub(
         new DynamicOptionMenu.CallBack<ExampleModel>() {
