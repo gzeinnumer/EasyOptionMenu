@@ -7,20 +7,20 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".DynamicOptionMenu">
+    tools:context=".dialog.DynamicOptionMenu">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/space"
         android:background="@drawable/dynamic_option_menus_bg"
-        android:padding="@dimen/def_margin"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:padding="@dimen/def_margin">
 
         <TextView
             android:id="@+id/tv_title"
-            android:layout_gravity="center"
             style="@style/MyTextHeader"
+            android:layout_gravity="center"
             android:layout_marginTop="0dp"
             android:layout_marginBottom="@dimen/space"
             android:text="MyTextHeader" />
@@ -38,8 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/background_dynamic_menus"
-                android:drawableStart="@drawable/ic_search_normal"
-                android:drawableLeft="@drawable/ic_search_normal"
+                android:drawableStart="@drawable/bdm_ic_search_normal"
+                android:drawableLeft="@drawable/bdm_ic_search_normal"
                 android:drawablePadding="@dimen/def_margin_half"
                 android:hint="Search"
                 android:imeOptions="actionSearch"
@@ -65,13 +65,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/def_margin"
-            android:background="@drawable/corner_rv"
+            android:background="@drawable/bdm_corner_rv"
             android:overScrollMode="never"
             android:paddingTop="2dp"
             android:paddingBottom="2dp"
             android:visibility="gone"
             tools:itemCount="1"
-            tools:listitem="@layout/item__dynamicoptionsmenu_selected"
+            tools:listitem="@layout/item_dynamicoptionsmenu_selected"
             tools:visibility="visible" />
 
         <LinearLayout
@@ -79,7 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space"
-            android:background="@drawable/corner_rv"
+            android:background="@drawable/bdm_corner_rv"
             android:visibility="gone"
             tools:visibility="visible">
 
@@ -114,12 +114,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/space"
-            android:background="@drawable/corner_rv"
+            android:background="@drawable/bdm_corner_rv"
             android:overScrollMode="never"
             android:paddingTop="2dp"
             android:paddingBottom="2dp"
             tools:itemCount="3"
-            tools:listitem="@layout/item__dynamicoptionsmenu" />
+            tools:listitem="@layout/item_dynamicoptionsmenu" />
 
     </LinearLayout>
 </LinearLayout>
