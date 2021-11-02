@@ -21,7 +21,6 @@ import com.gzeinnumer.edf.MyLibDialog;
 import com.gzeinnumer.eom.adapter.OptionsAdapter;
 import com.gzeinnumer.eom.R;
 import com.gzeinnumer.eom.adapter.SelectedAdapter;
-import com.gzeinnumer.eom.base.BaseList;
 
 import java.util.ArrayList;
 import java.util.Arrays;

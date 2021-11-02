@@ -10,17 +10,17 @@
     tools:context=".dialog.DynamicOptionMenu">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/space"
         android:background="@drawable/dynamic_option_menus_bg"
-        android:padding="@dimen/def_margin"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:padding="@dimen/def_margin">
 
         <TextView
             android:id="@+id/tv_title"
-            android:layout_gravity="center"
             style="@style/MyTextHeader"
+            android:layout_gravity="center"
             android:layout_marginTop="0dp"
             android:layout_marginBottom="@dimen/space"
             android:text="MyTextHeader" />

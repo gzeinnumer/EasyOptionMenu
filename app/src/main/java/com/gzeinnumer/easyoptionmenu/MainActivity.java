@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
                         public void positionItem(ExampleModel data) {
                             appent("Level 4_" + data);
                         }
-                    }).show();
+                    })
+                    .show();
         });
     }
 
