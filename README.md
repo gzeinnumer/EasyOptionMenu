@@ -293,7 +293,7 @@ new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
 
 **Preview** :
 
-|<img src="https://github.com/gzeinnumer/EasyOptionMenu/blob/1.0.0/preview/preview_1.gif" width="300"/>|<img src="https://github.com/gzeinnumer/EasyOptionMenu/blob/1.0.0/preview/preview_2.gif" width="300"/>|<img src="https://github.com/gzeinnumer/EasyOptionMenu/blob/1.0.0/preview/preview_2.gif" width="300"/>|
+|<img src="https://github.com/gzeinnumer/EasyOptionMenu/blob/1.0.0/preview/preview_1.gif" width="300"/>|<img src="https://github.com/gzeinnumer/EasyOptionMenu/blob/1.0.0/preview/preview_2.gif" width="300"/>|<img src="https://github.com/gzeinnumer/EasyOptionMenu/blob/1.0.0/preview/preview_3.gif" width="300"/>|
 |---|---|---|
 
 
