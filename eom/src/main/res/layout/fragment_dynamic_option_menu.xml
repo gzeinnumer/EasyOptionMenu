@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/space"
-        android:background="@drawable/dynamic_option_menus_bg"
+        android:background="@drawable/rounded_corner"
         android:orientation="vertical"
         android:padding="@dimen/def_margin">
 
@@ -25,40 +25,16 @@
             android:layout_marginBottom="@dimen/space"
             android:text="MyTextHeader" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_dynamic_menus"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/MyTextInputLayoutOutlinedBox.Spesial.V3.Search"
+            android:layout_marginTop="0dp"
+            android:hint="Search">
 
-            <AutoCompleteTextView
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_Search"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/background_dynamic_menus"
-                android:drawableStart="@drawable/bdm_ic_search_normal"
-                android:drawableLeft="@drawable/bdm_ic_search_normal"
-                android:drawablePadding="@dimen/def_margin_half"
-                android:hint="Search"
-                android:imeOptions="actionSearch"
-                android:inputType="text"
-                android:lines="1"
-                android:maxLines="1"
-                android:paddingStart="@dimen/def_margin_half"
-                android:singleLine="true"
-                android:textSize="@dimen/h4" />
+                style="@style/MyTextInputEditText.Spesial.V3.Search" />
 
-            <ImageButton
-                android:id="@+id/btn_Scan_Barcode2"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/def_margin_half"
-                android:layout_marginLeft="@dimen/def_margin_half"
-                android:visibility="invisible" />
-        </LinearLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_selected"

@@ -17,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.gzeinnumer.edf.MyLibDialog;
 import com.gzeinnumer.eom.adapter.OptionsAdapter;
 import com.gzeinnumer.eom.R;
@@ -42,7 +43,7 @@ public class DynamicOptionMenu<T> extends MyLibDialog {
     private RecyclerView rvSelected;
     private RecyclerView rvOptions;
     private LinearLayout llEmpty;
-    private AutoCompleteTextView etSearch;
+    private TextInputEditText etSearch;
     private TextView tvTitle;
     private String title ="";
 
