@@ -6,7 +6,7 @@
 </h1>
 
 <div align="center">
-    <a><img src="https://img.shields.io/badge/Version-1.0.1-brightgreen.svg?style=flat"></a>
+    <a><img src="https://img.shields.io/badge/Version-1.1.0-brightgreen.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/ID-gzeinnumer-blue.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/Java-Suport-green?logo=java&style=flat"></a>
     <a><img src="https://img.shields.io/badge/Kotlin-Suport-green?logo=kotlin&style=flat"></a>
@@ -290,6 +290,16 @@ new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
     .show();
 ```
 
+#
+
+- Disable Filter
+```java
+new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
+    ...
+    .setEnableFilter(false)
+    ...
+```
+
 **Preview** :
 
 |<img src="https://github.com/gzeinnumer/EasyOptionMenu/blob/1.0.0/preview/preview_1.gif" width="300"/>|<img src="https://github.com/gzeinnumer/EasyOptionMenu/blob/1.0.0/preview/preview_2.gif" width="300"/>|<img src="https://github.com/gzeinnumer/EasyOptionMenu/blob/1.0.0/preview/preview_3.gif" width="300"/>|
@@ -310,6 +320,8 @@ new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
   - First Release
 - **1.0.1**
   - New Filter Style
+- **1.1.0**
+  - Enable Filter
 
 ---
 

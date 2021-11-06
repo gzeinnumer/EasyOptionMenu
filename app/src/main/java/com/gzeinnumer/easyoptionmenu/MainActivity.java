@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 new DynamicOptionMenuBuilder<ExampleModel>(getSupportFragmentManager())
                         .builder(level1)
                         .setTitle("Pilih Merek")
+//                        .setEnableFilter(false)
                         .finalCallBack(new DynamicOptionMenu.CallBackFinal<ExampleModel>() {
                             @Override
                             public void positionItem(ExampleModel data) {

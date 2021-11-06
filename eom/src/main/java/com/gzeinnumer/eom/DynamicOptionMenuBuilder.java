@@ -24,6 +24,11 @@ public class DynamicOptionMenuBuilder<T> {
         return this;
     }
 
+    public DynamicOptionMenuBuilder<T> setEnableFilter(boolean enableFilter) {
+        dialog.setEnableFilter(enableFilter);
+        return this;
+    }
+
     public DynamicOptionMenuBuilder<T> setTitle(String title) {
         dialog.setTitle(title);
         return this;

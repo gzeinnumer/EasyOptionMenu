@@ -27,10 +27,12 @@ public class OptionsAdapter<T> extends RecyclerView.Adapter<OptionsAdapter.MyHol
     private SizeCallBack sizeCallBack;
     private int currentCallBack;
     private int levelSize;
+    private int sizeOfLevel;
 
-    public OptionsAdapter(List<T> list) {
+    public OptionsAdapter(List<T> list, int sizeOfLevel) {
         this.list = new ArrayList<>(list);
         this.listFilter = new ArrayList<>(list);
+        this.sizeOfLevel = sizeOfLevel;
     }
 
     public void setOnItemClickListener(OnItemClickListener<T> onItemClickListener) {
@@ -85,7 +87,8 @@ public class OptionsAdapter<T> extends RecyclerView.Adapter<OptionsAdapter.MyHol
 
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
-        holder.bind(list.get(position), onItemClickListener, currentCallBack, levelSize);
+        holder.bind(list.get(position), onItemClickListener, currentCallBack, levelSize, sizeOfLevel);
+
 
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) holder.cardView.getLayoutParams();
         int first_last = 6;
@@ -132,11 +135,14 @@ public class OptionsAdapter<T> extends RecyclerView.Adapter<OptionsAdapter.MyHol
             this.itemView = itemView;
             this.tvTitle = itemView.findViewById(R.id.tv_title);
             this.img = itemView.findViewById(R.id.img);
-            cardView = itemView.findViewById(R.id.cv);
+            this.cardView = itemView.findViewById(R.id.cv);
         }
 
-        public void bind(T data, OnItemClickListener onItemClickListener, int currentCallBack, int levelSize) {
+        public void bind(T data, OnItemClickListener<T> onItemClickListener, int currentCallBack, int levelSize, int sizeOfLevel) {
             tvTitle.setText(data.toString());
+            if (sizeOfLevel ==0){
+                img.setVisibility(View.GONE);
+            }
             if (currentCallBack==levelSize-1){
                 img.setVisibility(View.GONE);
             } else {

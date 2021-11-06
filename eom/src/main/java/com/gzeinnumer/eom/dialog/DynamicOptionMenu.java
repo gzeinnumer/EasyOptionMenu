@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.gzeinnumer.edf.MyLibDialog;
 import com.gzeinnumer.eom.adapter.OptionsAdapter;
 import com.gzeinnumer.eom.R;
@@ -44,8 +45,21 @@ public class DynamicOptionMenu<T> extends MyLibDialog {
     private RecyclerView rvOptions;
     private LinearLayout llEmpty;
     private TextInputEditText etSearch;
+    private TextInputLayout etSearchP;
     private TextView tvTitle;
-    private String title ="";
+    private String title = "";
+    private boolean enableFilter = true;
+
+    public void setEnableFilter(boolean enableFilter) {
+        this.enableFilter = enableFilter;
+    }
+
+    private void hideFilter() {
+        if (enableFilter)
+            etSearchP.setVisibility(View.VISIBLE);
+        else
+            etSearchP.setVisibility(View.GONE);
+    }
 
     public interface CallBack<T> {
         List<T> positionItem(T data);
@@ -95,7 +109,7 @@ public class DynamicOptionMenu<T> extends MyLibDialog {
 
     private void initView() {
         initBind();
-        if (title.length()>0){
+        if (title.length() > 0) {
             tvTitle.setVisibility(View.VISIBLE);
             tvTitle.setText(title);
         } else {
@@ -113,8 +127,10 @@ public class DynamicOptionMenu<T> extends MyLibDialog {
         rvSelected = view.findViewById(R.id.rv_selected);
         rvOptions = view.findViewById(R.id.rv_option);
         etSearch = view.findViewById(R.id.et_Search);
+        etSearchP = view.findViewById(R.id.et_Search_p);
         llEmpty = view.findViewById(R.id.ll_empty);
         tvTitle = view.findViewById(R.id.tv_title);
+        hideFilter();
     }
 
     private void initSearchView() {
@@ -160,7 +176,7 @@ public class DynamicOptionMenu<T> extends MyLibDialog {
     }
 
     private void initOption() {
-        optionsAdapter = new OptionsAdapter<T>(listBase.get(currentLevel).getData());
+        optionsAdapter = new OptionsAdapter<T>(listBase.get(currentLevel).getData(), callBacks.size());
         rvOptions.setAdapter(optionsAdapter);
         rvOptions.hasFixedSize();
         rvOptions.setLayoutManager(new LinearLayoutManager(requireContext()));
@@ -193,7 +209,7 @@ public class DynamicOptionMenu<T> extends MyLibDialog {
         optionsAdapter.setSizeCallBack(new OptionsAdapter.SizeCallBack() {
             @Override
             public void sizeAfterFilter(int size) {
-                if (size>0){
+                if (size > 0) {
                     rvOptions.setVisibility(View.VISIBLE);
                     llEmpty.setVisibility(View.GONE);
                 } else {
