@@ -90,6 +90,7 @@ public class DynamicOptionMenu<T> extends MyLibDialog {
         super.onStart();
         setCanvasWidth(1);
         setGravity(Gravity.BOTTOM);
+        enableBackButton(true);
     }
 
     @Override
